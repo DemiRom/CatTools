@@ -1,8 +1,12 @@
 #ifndef CATTOOLS_H
 #define CATTOOLS_H
 
+#include "stdio.h"
+#include "iostream"
+
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QXmlStreamReader>
 
 namespace Ui {
 class CatTools;
@@ -23,8 +27,10 @@ private slots:
 
 private:
     Ui::CatTools *ui;
-    QFileDialog *dialog;
     QString fileName;
+    QXmlStreamReader reader;
+
+    void readFile(QFile&);
 };
 
 #endif // CATTOOLS_H
